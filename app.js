@@ -67,4 +67,4 @@ app.use('/api/v1',updateTask);
 // DELETE
 // creating routes to hendal the delete requese
 const deleteTask = require('./deleteTask');
-app.use('./api/v1',deleteTask);
+app.use('/api/v1',deleteTask);
