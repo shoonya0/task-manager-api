@@ -1,7 +1,7 @@
 // importing express module
 const express = require('express');
 
-// make an instance of express
+// used to create new router object
 const router = express.Router();
 
 // import MYSQL module
@@ -10,7 +10,7 @@ const router = express.Router();
 // const {MYSQL, MYSQLDB} = require('./app');
 const MYSQL = require('./app');
 
-// use express to parse incoming request with JSON payload
+// handling the post request using the post method
 router.post('/addTask/:title',(req, res)=>{
     // get the title from the request parameters
     const title = req.params.title;

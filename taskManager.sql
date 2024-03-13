@@ -8,7 +8,7 @@ create table task(
     title varchar(50) not null unique,
     description varchar(300) not null,
     status enum('pending', 'inprogress', 'completed' , 'canceled' , 'onhold') default 'pending',
-    start_time timestamp default current_timestamp,
+    start_time timestamp not null,
     end_time timestamp not null
 );
     -- to see the values of the table and their type
@@ -18,6 +18,7 @@ create table task(
     use taskManagerDB;
     select * from task;
 
+use taskManagerDB;
 drop database taskManagerDB;
 drop schema taskManagerDB;
 ```
