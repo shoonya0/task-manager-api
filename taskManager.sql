@@ -18,6 +18,7 @@ create table task(
     use taskManagerDB;
     select * from task;
 
+-- to delete the table
 use taskManagerDB;
 drop database taskManagerDB;
 drop schema taskManagerDB;

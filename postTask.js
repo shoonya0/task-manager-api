@@ -17,12 +17,12 @@ router.post('/addTask/:title',(req, res)=>{
     // get the description, status, start_time and end_time from the request body
     const {description, status, start_time, end_time} = req.body;
     if(!title || !description){
-        console.log('Title, description, status, start_time and end_time are required');
-        res.status(400).json('Title, description, status, start_time and end_time are required');
+        console.log('Title or description are required');
+        res.status(400).json('Title or description are required');
     }
     
     // create a dynamic query to insert the task into the database
-    query = `INSERT INTO task(title, description, status, start_time, end_time) VALUES ('${title}', '${description}', '${status ? status : "pending"}', '${start_time}', '${end_time}')`;
+    const query = `INSERT INTO task(title, description, status, start_time, end_time) VALUES ('${title}', '${description}', '${status ? status : "pending"}', '${start_time}', '${end_time}')`;
     
     // log the query to the console
     console.log('Query : '+query);
