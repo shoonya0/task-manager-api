@@ -1,3 +1,5 @@
+
+
 // importing express module
 const express = require('express');
 
@@ -31,7 +33,7 @@ router.post('/addTask/:title',(req, res)=>{
     MYSQL.query(query,(err, result)=>{
         if(err){
             console.log('Error in adding task : '+err.message);
-            res.status(500).send('Error in adding task');
+            res.status(500).send('Error in adding task : '+err.message);
         }
         else{
             console.log('Task added successfully');
